@@ -28,6 +28,8 @@ module.exports = {
     //不检测文件末尾有没有空行
     'eol-last': 0,
     //fucntion左括号有没有空格
-    'space-before-function-paren': 0
+    'space-before-function-paren': 0,
+    //取消indent警告
+    "indent": 0  
   }
 }

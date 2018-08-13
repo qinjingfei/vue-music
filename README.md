@@ -9,6 +9,7 @@
 NO| Guide |
 ---| --- | 
  1 |  [项目准备](./notes/1.1_intro.md)  |
+ 2 | [页面框架开发](./notes/2.1_skeleton.md)
 
 
 

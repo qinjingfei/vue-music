@@ -97,6 +97,12 @@ export default {
                 this.slider.goToPage(this.currentPageIndex++, 0, 400)
             }, this.interval)
         }
+    },
+    /**
+     * 在vue销毁的时候，清除timer
+     */
+    destroyed() {
+        clearInterval(this.timer)
     }
 }
 </script>

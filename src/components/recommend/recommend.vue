@@ -20,26 +20,36 @@
 </template>
 <script>
 import Slider from '@/base/slider/slider'
-import {getRecommend} from '@/api/recommend'
+import {getRecommend, getDiscList} from '@/api/recommend'
 import {ERR_OK} from '@/api/config'
 export default {
   data() {
     return {
-        recommends: []
+        recommends: [],
+        discList: []
     }
   },
   created() {
       this._getRecommend()
+      this._getDiscList()
   },
   methods: {
       /**
        * 把请求的slider数据传给数组 this.recommends
        */
-      _getRecommend() {
-          getRecommend().then((res) => {
-              this.recommends = res.code === ERR_OK ? res.data.slider : []
-          })
-      }
+    _getRecommend() {
+        getRecommend().then((res) => {
+            this.recommends = res.code === ERR_OK ? res.data.slider : []
+        })
+    },
+    _getDiscList() {
+        getDiscList().then((res) => {
+            if (res.code === ERR_OK) {
+                console.log('推荐:', res)
+                this.discList = res.data.list
+            } else console.log('没,没有推荐')
+        })
+    }
   },
   components: {
       Slider

@@ -11,6 +11,7 @@ NO| Guide |
  1 |  [项目准备](./notes/1.1_intro.md)  |
  2 | [页面框架开发](./notes/2.1_skeleton.md) |
  3.1 | [jsonp(轮播图数据抓取)](./notes/3.1_jsonp.md) |
+ 3.2 | [轮播图](./notes/3.2_lunbo.md)|
 
 
 

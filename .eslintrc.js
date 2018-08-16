@@ -30,6 +30,6 @@ module.exports = {
     //fucntion左括号有没有空格
     'space-before-function-paren': 0,
     //取消indent警告
-    "indent": 0  
+    "indent": 0
   }
 }

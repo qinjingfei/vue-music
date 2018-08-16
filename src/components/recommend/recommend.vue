@@ -2,7 +2,7 @@
     <div class="recommend">
         <div class="recommend-content">
             <div v-if="recommends.length" class="slider-wrapper"> <!--当recommends存在时，在渲染slider-wrapper-->
-                <slider>
+                <slider>  <!--slider元素里的内容会插入到slider.vue中slot元素中-->
                     <div v-for= "(item, index) in recommends" :key="index">
                         <a :href="item.linkUrl">
                             <img :src="item.picUrl" alt="">
@@ -32,6 +32,9 @@ export default {
       this._getRecommend()
   },
   methods: {
+      /**
+       * 把请求的slider数据传给数组 this.recommends
+       */
       _getRecommend() {
           getRecommend().then((res) => {
               this.recommends = res.code === ERR_OK ? res.data.slider : []

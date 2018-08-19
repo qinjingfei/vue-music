@@ -13,6 +13,15 @@
             <div class="recommend-list">
                 <h1 class="list-title">热门歌单推荐</h1>
                 <ul>
+                    <li v-for="(item, index) in discList" class="item" :key="index">
+                        <div class="icon">
+                            <img width="60" height="60" :src="item.imgurl" alt="">
+                        </div>
+                        <div class="text">
+                            <h2 class="name">{{item.creator.name}}</h2>
+                            <p class="desc">{{item.dissname}}</p>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -40,14 +49,13 @@ export default {
     _getRecommend() {
         getRecommend().then((res) => {
             this.recommends = res.code === ERR_OK ? res.data.slider : []
+            console.log(this.recommends)
         })
     },
     _getDiscList() {
         getDiscList().then((res) => {
-            if (res.code === ERR_OK) {
-                console.log('推荐:', res)
-                this.discList = res.data.list
-            } else console.log('没,没有推荐')
+           this.discList = res.code === ERR_OK ? res.data.list : []
+           console.log(this.discList)
         })
     }
   },
@@ -79,7 +87,7 @@ export default {
                 text-align: center
                 font-size: $font-size-medium
                 color: $color-theme
-            .item
+            .item                       // flex 布局， 左面固定宽度， 右边自适应
                 display: flex
                 box-sizing: border-box
                 align-items: center

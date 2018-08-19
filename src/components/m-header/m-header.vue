@@ -2,7 +2,7 @@
   <div class="m-header">
     <div class="icon"></div>
     <h1 class="text">Vue Music</h1>
-    <router-view></router-view>
+    <!-- <router-view></router-view> -->
   </div>
 </template>
 
